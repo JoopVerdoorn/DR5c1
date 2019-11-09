@@ -1,5 +1,4 @@
 using Toybox.WatchUi as Ui;
-using Toybox.System as Sys;
 
 class DatarunPremiumwith5metricscopy1App extends Toybox.Application.AppBase {
     function initialize() {
@@ -13,8 +12,6 @@ class DatarunPremiumwith5metricscopy1App extends Toybox.Application.AppBase {
 }
 
 class DatarunpremiumView extends Ui.DataField {
-	hidden var stats = Sys.getSystemStats();
-	hidden var pwr = stats.battery;
 	hidden var appversion = "1.00";
 
 	//!Get device info
@@ -103,10 +100,13 @@ class DatarunpremiumView extends Ui.DataField {
     hidden var mLapTimerTimeHR				= 0;    
 	hidden var mLastLapTimeHRMarker			= 0;
 	hidden var mLastLapTimerTimeHR			= 0;
+	hidden var currentHR					= 0;
 	hidden var LapHeartrate					= 0;
 	hidden var LastLapHeartrate				= 0;
 	hidden var AverageHeartrate 			= 0; 
 	hidden var mLapElapsedDistance 			= 0;
+	hidden var NoLapEffect					= false;
+	
 
     function initialize() {
          DataField.initialize();
@@ -126,6 +126,7 @@ class DatarunpremiumView extends Ui.DataField {
          uRacedistance		 = mApp.getProperty("pRacedistance");
          uRacetime			 = mApp.getProperty("pRacetime");
          appversion 		 = mApp.getProperty("pAppversion");
+         NoLapEffect 		 = mApp.getProperty("pNoLapEffect");
          var uHrZones = UserProfile.getHeartRateZones(UserProfile.getCurrentSport());
 	 
         if (System.getDeviceSettings().paceUnits == System.UNIT_STATUTE) {
@@ -258,6 +259,7 @@ class DatarunpremiumView extends Ui.DataField {
         mRacetime = mRacehour*3600 + mRacemin*60 + mRacesec;
 
 		//!Fill field metrics
+		currentHR = (info.currentHeartRate != null) ? info.currentHeartRate : 0;
 		var i = 0; 
 	    for (i = 1; i < 6; ++i) {	    
         	if (metric[i] == 0) {
@@ -364,7 +366,7 @@ class DatarunpremiumView extends Ui.DataField {
 		       	fieldLabel[i] = "Altitude";
 		       	fieldFormat[i] = "0decimal";        		
         	} else if (metric[i] == 45) {
-    	        fieldValue[i] = (info.currentHeartRate != null) ? info.currentHeartRate : 0;
+    	        fieldValue[i] = currentHR;
         	    fieldLabel[i] = "HR";
             	fieldFormat[i] = "0decimal";
 			}

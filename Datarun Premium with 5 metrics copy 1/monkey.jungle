@@ -13,5 +13,13 @@ d2delta.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-power-extra;		sour
 d2deltapx.sourcePath	=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
 d2deltas.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
 fr945.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
+marqathlete.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
+marqaviator.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
+marqcaptain.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
+marqdriver.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
+marqexpedition.sourcePath	=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
+descentmk1.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
+fenix6spro.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-240x240
 
-fr645m.sourcePath		=source;source-0-mem-extra;	source-1-ciq2-nopower-extra;	source-2-nopower-nofont;	source-3-round-240x240
+fenix6pro.sourcePath			=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-260x260
+fenix6xpro.sourcePath			=source;source-0-mem-extra;	source-1-ciq2-power-extra;		source-2-power;				source-3-round-280x280	
