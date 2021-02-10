@@ -38,9 +38,7 @@ class DeviceView extends PowerView {
         dc.drawLine(129, 30,  129, 100);
 
         //! Centre vertical dividers
-		if (hideDiv == false) {
-			dc.drawLine(129, 100,  129,  190);
-		}
+        dc.drawLine(129, 100,  129,  190);
         
         //! Bottom horizontal divider
 		dc.drawLine(53, 237, 220, 237); 
@@ -94,7 +92,7 @@ class DeviceView extends PowerView {
 		dc.setColor(mColourFont, Graphics.COLOR_TRANSPARENT);
 	
 		if (licenseOK == true) {
-      		dc.drawText(130, 40, Graphics.FONT_XTINY, "Datarun prem 5m c0", Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
+      		dc.drawText(130, 40, Graphics.FONT_XTINY, "DR5c1", Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
 			dc.drawText(130, 120, Graphics.FONT_TINY, "Registered !!", Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
 			dc.drawText(81, 160, Graphics.FONT_XTINY, "License code: ", Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
 			dc.drawText(189, 160, Graphics.FONT_XTINY, mtest, Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
