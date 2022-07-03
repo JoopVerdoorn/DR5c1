@@ -23,7 +23,6 @@ class DatarunpremiumView extends Ui.DataField {
 	hidden var watchType 					= mySettings.partNumber;
 	hidden var licenseOK 					= false;
 	hidden var CCode 						= 12345678;	
-	hidden var uMilClockAltern 				= 0;
 	hidden var uShowDemo 					= false;
 	hidden var umyNumber 					= 26429769;
 	var uBlackBackground 					= false;
@@ -93,6 +92,7 @@ class DatarunpremiumView extends Ui.DataField {
 	hidden var AverageHeartrate 			= 0; 
 	hidden var mLapElapsedDistance 			= 0;
 	hidden var uShowRedClock 				= false;
+	hidden var c0Version					= true;
 
     function initialize() {
          DataField.initialize();
@@ -107,7 +107,6 @@ class DatarunpremiumView extends Ui.DataField {
          uBacklight          = mApp.getProperty("pBacklight");
          umyNumber			 = mApp.getProperty("myNumber");
          uShowDemo			 = mApp.getProperty("pShowDemo");
-         uMilClockAltern	 = mApp.getProperty("pMilClockAltern");
          uRacedistance		 = mApp.getProperty("pRacedistance");
          uRacetime			 = mApp.getProperty("pRacetime");
          appversion 		 = mApp.getProperty("pAppversion");
@@ -139,7 +138,11 @@ class DatarunpremiumView extends Ui.DataField {
 		CCode = CCode*hashfunction((uHrZones[2]*uHrZones[4]+uHrZones[1]+uHrZones[3]).toString())-7637;
         CCode = (CCode > 0) ? CCode : -CCode; 
         CCode = CCode % 452498 + 52478;      
-        licenseOK = (umyNumber == mtest or CCode == uCCnumber) ? true : false;
+        if (c0Version == true) {
+        	licenseOK = (umyNumber == mtest) ? true : false;
+        } else {
+        	licenseOK = (umyNumber == mtest or CCode == uCCnumber) ? true : false;
+        }
     }
 
     //! Timer transitions from stopped to running state
